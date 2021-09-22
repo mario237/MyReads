@@ -55,7 +55,7 @@ class BookStore extends Component {
         return(newBook)
     }
 
-    getBooks = () => {
+    componentDidMount = () => {
         BooksAPI.getAll().then ((value) => {
             if (value.error) {
                 console.log(value.error)
@@ -72,7 +72,7 @@ class BookStore extends Component {
     }
 
     render() {
-        this.getBooks()
+
         const { books, bookshelf } = this.state
         return (
             <div className="app">
